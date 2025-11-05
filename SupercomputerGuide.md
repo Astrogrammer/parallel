@@ -141,8 +141,8 @@ scp login@hpc.cs.vsu.ru:~/path/to/sending_file.txt /path/to/receiving_file.txt
 2. Перейдите в конец файла и добавьте команды, которые будут исполняться при каждом вашем входе в систему. Например, для модуля `openmpi/5.0.8` введите:
 ```
 # Load OpenMPI
-module load gcc/7.5.0 > /dev/null
-module load openmpi/5.0.8 > /dev/null
+module load gcc/7.5.0 &> /dev/null
+module load openmpi/5.0.8 &> /dev/null
 ```
 Перенаправление вывода в /dev/null избавит вас от вывода служебной информации при каждом входе в систему.  
 3. Нажмите `F2` для сохранения файла.  
