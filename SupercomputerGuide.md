@@ -340,7 +340,7 @@ sbatch -c 240 (--partition=mic) start_mic.sh 240 (arg2) (...)
 
 
 ## <a id="questions">Часто задаваемые вопросы</a>
-### <a id="questions">Не удаётся подключиться к hpc.cs.vsu.ru</a>
+### <a id="error_entry">Не удаётся подключиться к hpc.cs.vsu.ru</a>
 **Ошибка:** REMOTE HOST IDENTIFICATION HAS CHANGED  
 **Причина:** изменились параметры SSH на сервере.  
 **Решение:** удалить файл `/home/user/.ssh/known_hosts` (или `C:\Users\user\.ssh\known_hosts`).  
@@ -370,3 +370,7 @@ sbatch -c 240 (--partition=mic) start_mic.sh 240 (arg2) (...)
 *Вариант 5:* ключ был сгенерирован на MacOS через Wi-Fi ВГУ или ФКН.  
 **Решение:** сгенерируйте новую пару ключей через мобильный или домашний интернет  
 и отправьте публичный ключ администратору.  
+
+**Ошибка:** The remote host does not meet the prerequisites for running VS Code Server.
+**Причина:** устаревшая ОС на кластере (SLES 12 SP 2).
+**Решение:** установить версию VS Code версии 1.85.2 (подробнее [в отдельном гайде](https://github.com/ded-otshelnik/parallel-programming/blob/main/practices/vscode-remote-linux.md#установка-vscode-подходящей-под-суперкомпьютер))
