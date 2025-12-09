@@ -349,6 +349,7 @@ sbatch -c 240 (--partition=mic) start_mic.sh 240 (arg2) (...)
 
 **Ошибка:** Permission denied (publickey)  
 **Причина:** приватный ключ на клиенте не подходит к публичному ключу на сервере.  
+
 *Вариант 1:* неправильно введён логин.  
 **Решение:** проверить, что команда имеет вид `ssh ivanov_ii@hpc.cs.vsu.ru`  
 (НЕ Ivanov_ii, ivanov_i_i, ivanov_ivanivanovich).  
