@@ -8,6 +8,7 @@
 2. [Как обмениваться файлами](#files)
     - [На Linux через проводник](#linux_caja)
     - [На Linux через терминал](#linux_scp)
+    - [На Windows через проводник](#windows_sshfs)
     - [На Windows через WinSCP](#windows_scp)
 3. [Как загружать модули](#modules)
     - [Для временного использования](#temp_modules)
@@ -110,6 +111,24 @@ scp /path/to/sending_file.txt login@hpc.cs.vsu.ru:~/path/to/destination_file.txt
 scp login@hpc.cs.vsu.ru:~/path/to/sending_file.txt /path/to/receiving_file.txt
 ```  
 Файл `sending_file.txt` будет **получен от кластера** и помещён в указанный каталог с именем `receiving_file.txt`
+
+### <a id="windows_sshfs">На Windows через проводник</a>
+Для работы данного способа требуется выполнение условий:  
+1. ОС Windows 10 и выше.
+2. Ключ сгенерирован через `ssh-keygen -t rsa`
+3. Приватный ключ не защищён паролем.
+
+Если все условия выполнены, следуйте инструкции:  
+1. Откройте терминал через `Win+X` ➔ `Терминал`
+2. Скачайте и установите модуль `sshfs-win` при помощи команды:
+```
+winget install SSHFS-Win.SSHFS-Win
+```
+3. Откройте проводник. В адресной строке введите:
+```
+\\sshfs.k\login@hpc.cs.vsu.ru
+```
+4. Теперь вы можете работать с вашей папкой на суперкомпьютере так, будто она является обычной папкой на локальной системе. Можно свободно редактировать и переносить файлы между системами.
 
 ### <a id="windows_scp">На Windows через WinSCP</a>
 1. Скачайте и установите программу *WinSCP*.
